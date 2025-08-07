@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: goldenrod;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px #aaa;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover{
+    background-color: red;
+}
