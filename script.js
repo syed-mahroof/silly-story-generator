@@ -1,5 +1,6 @@
 const generateButton = document.getElementById('generate');
 const storyPara = document.getElementById('story');
+const customName = document.getElementById('customName');
 
 function randomValueFromArray(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -14,7 +15,12 @@ generateButton.addEventListener('click', () => {
   const yItem = randomValueFromArray(insertY);
   const zItem = randomValueFromArray(insertZ);
 
-  const story = `It was a hot day, and ${xItem} went to ${yItem}. Then they ${zItem}. It was hilarious!`;
+  let story = `It was a hot day, and ${xItem} went to ${yItem}. Then they ${zItem}. It was hilarious!`;
+
+  // If user entered a name, replace 'xItem' with it
+  if (customName.value.trim() !== '') {
+    story = story.replace(xItem, customName.value.trim());
+  }
 
   storyPara.textContent = story;
 });
