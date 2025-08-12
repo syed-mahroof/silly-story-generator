@@ -11,16 +11,16 @@ const insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
 const insertZ = ['spontaneously combusted', 'melted into a puddle', 'turned into a slug and crawled away'];
 
 generateButton.addEventListener('click', () => {
-  const xItem = randomValueFromArray(insertX);
+  let xItem = randomValueFromArray(insertX);
   const yItem = randomValueFromArray(insertY);
   const zItem = randomValueFromArray(insertZ);
 
-  let story = `It was a hot day, and ${xItem} went to ${yItem}. Then they ${zItem}. It was hilarious!`;
-
-  // If user entered a name, replace 'xItem' with it
+  // If user entered a name, use it instead of the random xItem
   if (customName.value.trim() !== '') {
-    story = story.replace(xItem, customName.value.trim());
+    xItem = customName.value.trim();
   }
+
+  const story = `It was a hot day, and ${xItem} went to ${yItem}. Then they ${zItem}. It was hilarious!`;
 
   storyPara.textContent = story;
 });
